@@ -1,0 +1,200 @@
+<!-- Golden Framework -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Golden Framework</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assets/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="assets/semantic.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script src="assets/semantic.min.js"></script>
+        <script type="text/javascript" src="assets/scripts.js"></script>
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+    </head>
+    <body class="bodyClass">
+        <div class="characterUI-BG">
+            <section class="characterUI">
+				<img class="characterBanner" src="https://i.imgur.com/QVtEUJv.png" />
+                <h2 class="characterTitle"><span class="characterTextTitle"></span><br></h2>
+                <h3 class="characterSecondary">Select your character:</h3>
+                <ul class="characterList"></ul>
+                <div class="ui dimmer" id="characterLoading1">
+                    <div class="ui big text loader">Creating Character</div>
+                </div>
+                <div class="ui dimmer" id="characterLoading2">
+                    <div class="ui big text loader">Loading Character</div>
+                </div>
+                <div class="ui dimmer" id="characterSaving">
+                    <div class="ui big text loader">Saving Character</div>
+                </div>
+                <div class="ui dimmer" id="loadingCharacterData">
+                    <div class="ui big text loader">Loading Character Data</div>
+                </div>
+                <center>
+                    <div class="characterBottomButtons">
+                        <button class="fluid ui green labeled icon button" type="button" id="openCharacterCreationUI"><i class="icon user plus"></i>Create New Character</button>
+                        <br>
+                        <button class="fluid ui red labeled icon button" type="button" id="exitGame"><i class="icon sign-out"></i>Exit Game</button>
+                    </div>
+                </center>
+                <div class="ui small modal characterCreationModal">
+                    <div class="header" style="width: 100%">Create Character</div>
+                    <div class="content">
+                        <div class="ui form characterCreationForm">
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>First Name</label>
+                                        <input type="text" name="firstName" id="firstName" data-validate="firstName">
+                                    </div>
+                                    <div class="field">
+                                        <label>Last Name</label>
+                                        <input type="text" name="lastName" id="lastName" data-validate="lastName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Date of Birth (mm/dd/yyyy)</label>
+                                        <div class="ui left icon input">
+                                            <input type="text" name="dateOfBirth" id="dateOfBirth" data-validate="dateOfBirth">
+                                            <i class="icon calendar"></i>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Gender</label>
+                                        <div class="ui selection dropdown">
+                                            <input type="hidden" name="gender" id="gender" data-validate="gender">
+                                            <i class="dropdown icon"></i>
+                                            <div class="default text">Select Gender</div>
+                                            <div class="menu">
+                                                <div class="item" data-value="Male">Male</div>
+                                                <div class="item" data-value="Female">Female</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Department</label>
+                                        <div class="ui selection dropdown">
+                                            <input type="hidden" name="department" id="department" data-validate="department">
+                                            <i class="dropdown icon"></i>
+                                            <div class="default text">Select Department</div>
+                                            <div class="menu" id="departmentDropdown1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Starting Money</label>
+                                        <div class="ui left icon input">
+                                            <input type="text" maxlength="5" name="startingMoney" id="startingMoney" data-validate="startingMoney">
+                                            <i class="icon dollar sign"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="departmentNullError"></div>
+                    </div>
+                    <div class="actions">
+                        <button class="ui green submit button" type="button" id="createNewCharacter">Create Character</button>
+                        <button class="ui red button" type="button" id="closeCharacterCreationUI">Cancel</button>
+                    </div>
+                </div>
+                <div class="ui small modal characterEditModal">
+                    <div class="header" style="width: 100%">Edit Character<span class="characterIDEditModal"></span></div>
+                    <div class="content">
+                        <div class="ui form characterEditForm">
+                            <div class="field">
+                                <div class="ui large label">Character ID: <span class="editIDText"></span></div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>First Name</label>
+                                        <input type="text" name="firstName" id="firstName" data-validate="firstName">
+                                    </div>
+                                    <div class="field">
+                                        <label>Last Name</label>
+                                        <input type="text" name="lastName" id="lastName" data-validate="lastName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Date of Birth (mm/dd/yyyy)</label>
+                                        <div class="ui left icon input">
+                                            <input type="text" name="dateOfBirth" id="dateOfBirth" data-validate="dateOfBirth">
+                                            <i class="icon calendar"></i>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label>Gender</label>
+                                        <div class="ui selection dropdown">
+                                            <input type="hidden" name="gender" id="gender" data-validate="gender">
+                                            <i class="dropdown icon"></i>
+                                            <div class="default text">Select Gender</div>
+                                            <div class="menu">
+                                                <div class="item" data-value="Male">Male</div>
+                                                <div class="item" data-value="Female">Female</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="field">
+                                    <label>Department</label>
+                                    <div class="ui selection dropdown">
+                                        <input type="hidden" name="department" id="department" data-validate="department">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Select Department</div>
+                                        <div class="menu" id="departmentDropdown2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="departmentNullError"></div>
+                    </div>
+                    <div class="actions">
+                        <button class="ui green submit button" type="button" id="editCharacterBtn">Save Character</button>
+                        <button class="ui red button" type="button" id="closeCharacterEditUIBtn">Cancel</button>
+                    </div>
+                </div>
+
+				<div class="madeByText">
+					<h4>Made By&nbsp;&nbsp;&bullet;&nbsp;&nbsp;<span style="color: #ffd500;">Golden Development</span></h4>
+				</div>
+            </section>
+        </div>
+
+        <section class="bankingUI">
+            <div class="showMoneyUI">
+                <div class="ui right internal attached rail" style="position: fixed; margin-top: 50px; margin-right: 30px;">
+                    <div class="ui basic right aligned segment">
+                        <span style="font-size: 27px;">
+                            <span style="color: rgb(79, 158, 0);">$ </span><span class="cashText">0</span>
+                            <br>
+                            <br>
+                            <span style="color: rgb(0, 113, 158);"><i class="icon credit card"></i>$ </span><span class="bankText">0</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="notificationSystem" style="position: absolute; top: 0px; right: 0px; margin-top: 50px; margin-right: 30px;">
+        </div>
+    </body>
+</html>

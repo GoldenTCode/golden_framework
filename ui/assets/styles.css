@@ -1,0 +1,154 @@
+/* Golden Framework */
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+
+@font-face { font-family: 'pricedown'; src: url('pricedown.ttf'); }
+
+@font-face { font-family: 'pricedownB'; src: url('pricedownB.ttf'); }
+
+
+/* Core UI */
+.bodyClass {
+    margin: 0;
+    color: white;
+    background-color: transparent;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Character UI */
+.characterBanner {
+    position: relative;
+    width: 96%;
+    height: 12%;
+	margin-top: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-size: contain;
+	background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.characterUI {
+    background-color: rgba(29, 29, 27, 1);
+    align-content: center;
+    height: 100%;
+    width: 30%;
+    margin-left: 0px;
+}
+
+.characterUI .characterTitle {
+    padding: 0% 5% 0% 5%;
+    padding-top: 0px;
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.characterUI .characterSecondary {
+    padding: 0% 5% 0% 5%;
+    margin-top: -10px;
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.characterUI .characterList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    text-align: center;
+    margin-top: 10px;
+    max-height: 59%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.characterUI .characterList .characterListItem {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.characterUI .madeByText {
+	position: absolute;
+	bottom: 1%;
+	margin-left: 15%;
+    transform: translateX(-50%);
+	color: white;
+}
+
+.characterBottomButtons {
+    position: sticky;
+    margin-top: 30px;
+}
+
+.characterAlert {
+    position: fixed;
+    margin-left: -5px;
+    height: 35px;
+    width: 430px;
+    background-color: #f44336;
+    border-radius: 5px;
+    color: white;
+}
+
+.characterAlert .message {
+    position: relative;
+    top: 9px;
+    right: 69%;
+    font-size: 15px;
+}
+
+.characterAlert .alertType {
+    left: -100px;
+}
+  
+.characterAlert .closebtn {
+    margin-right: 5px;
+    margin-top: 5px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.characterAlert .closebtn:hover {
+    color: black;
+}
+
+#openCharacterCreationUI {
+    width: 400px;
+}
+
+#exitGame {
+    width: 400px;
+}
+
+
+/* Banking UI */
+.bankingUI {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+    font-family: 'pricedownB';
+}
+
+.showMoneyUI {
+    display: none;
+}
