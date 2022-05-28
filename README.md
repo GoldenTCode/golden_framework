@@ -1,6 +1,6 @@
 # Golden Framework V1 - Not Maintained
 
-This is V1 of the Golden Framework. I stopped developing this framework due to me having no time to maintain the resource.
+This is V1 of the Golden Framework. I stopped developing this framework due to me having no time to work on the resource.
 
 So I am deciding to make it public, for anyone to use.
 
